@@ -49,6 +49,7 @@ io.on('connect', function(socket){
         console.log('user disconnected');
     });
 });
-http.listen(4000, function(){
-  console.log('listening on *:4000');
+const server = http.listen(process.env.PORT || 8081, () => {
+    const port = server.address().port;
+    console.log(`App listening on port ${port}`);
 });
