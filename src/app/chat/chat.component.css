@@ -12,7 +12,7 @@ body {
 
 .container {
   margin: 0 auto;
-  width: 750px;
+  width: 900px;
   background: #444753;
   border-radius: 5px;
 }
@@ -67,7 +67,7 @@ body {
 }
 
 .chat {
-  width: 490px;
+  width: 586px;
   float: left;
   background: #F2F5F8;
   border-top-right-radius: 5px;
@@ -136,6 +136,7 @@ body {
 .chat .chat-history .message-data-time {
   color: #a8aab1;
   padding-left: 6px;
+  display: inline-block;
 }
 .chat .chat-history .message {
   color: white;

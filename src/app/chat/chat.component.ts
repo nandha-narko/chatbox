@@ -22,7 +22,7 @@ export class ChatComponent implements OnInit {
   public users: UserModel[] = [];
 
   constructor() {
-    this.socket = io(process.env.CHATSERVER || "http://35.198.223.173/");
+    this.socket = io(process.env.CHATSERVER || "http://localhost:8081/");
     
     let user = new UserModel();
     user.name = this.userName;
@@ -97,7 +97,7 @@ export class ChatComponent implements OnInit {
 
   private updateMessages() {
     if(this.selUser) {
-      this.userMessages = this.messages.filter(a => a.from == this.selUser.name && a.to);
+      this.userMessages = this.messages.filter(a => a.to && (a.from == this.selUser.name || a.to == this.selUser.name));
     }
     else {
       this.userMessages = this.messages.filter(a => !a.to);

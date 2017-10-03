@@ -50,15 +50,14 @@
             </div> <!-- end chat-header -->
             <div class="chat-history">
                 <ul>
-                <li  *ngFor="let message of userMessages" [class.clearfix]="message.from != userName">
+                <li *ngFor="let message of userMessages" [class.clearfix]="message.from != userName">
                     <div class="message-data" [class.align-right]="message.from == userName">
-                    <span class="message-data-time" >{{ message.datetime | timeAgo }}</span> &nbsp; &nbsp;
-                    <span class="message-data-name" >{{ message.from }}</span>
-                    <i class="fa fa-circle" [attr.class]="message.from == userName ? me : online"></i>
-                    
+                        <span class="message-data-time" >{{ message.datetime | timeAgo }}</span> &nbsp; &nbsp;
+                        <span class="message-data-name" >{{ message.from }}</span>
+                        <i class="fa fa-circle" [attr.class]="message.from == userName ? me : online"></i>
                     </div>
                     <div class="message" [class.other-message]="message.from == userName"  [class.float-right]="message.from == userName"  [class.my-message]="message.from != userName">
-                    {{message.message}}
+                        {{message.message}}
                     </div>
                 </li>
                 
