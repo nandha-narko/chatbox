@@ -22,7 +22,7 @@ export class ChatComponent implements OnInit {
   public users: UserModel[] = [];
 
   constructor() {
-    this.socket = io(process.env.CHATSERVER || "http://35.198.223.173/");
+    this.socket = io(process.env.CHATSERVER || "https://35.198.223.173/");
     
     let user = new UserModel();
     user.name = this.userName;
